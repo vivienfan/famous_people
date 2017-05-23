@@ -29,7 +29,8 @@ client.connect((err) => {
   if (err) {
     return console.error("Connection Error", err);
   }
-  let name = process.argv[2];
+  let name = process.argv[2].toLowerCase();
+  name = name.charAt(0).toUpperCase() + name.slice(1);
 
   lookUp(name, (err, result) => {
     if (err) {
