@@ -11,7 +11,7 @@ const client = new pg.Client({
 });
 
 function lookUp(name, callback) {
-  console.log("Searching ...", name);
+  console.log("Searching ...");
   client.query(
     `select *
      from famous_people
