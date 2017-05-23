@@ -21,8 +21,11 @@ function loopUp(name){
     .then(function(rows) {
       console.log(`Found ${rows.length} person(s) by name '${name}':`);
       rows.forEach((row) => {
-          console.log(`- ${row.id}: ${row.first_name} ${row.last_name}, born '${row.birthdate.toISOString().slice(0, 10)}'`);
+        console.log(`- ${row.id}: ${row.first_name} ${row.last_name}, born '${row.birthdate.toISOString().slice(0, 10)}'`);
       });
+    })
+    .catch((err) => {
+      console.error(err);
     });
   }
 }
